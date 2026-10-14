@@ -1,6 +1,6 @@
 # CPU vs GPU: mental model + measured crossover
 
-> **Week 1 · Day 4** · Deliverable for `nvidia/week-01/day-04`
+> **Week 1 · Day 4** · Deliverable for `nvidia/w01/d04`
 > Status: **draft: predictions and analysis done, measurements pending** · Last updated: **2026-09-30** · Code: `labs/cuda/matmul-bench`
 > Raw data: `labs/cuda/matmul-bench/results/*.csv` · Environment: `labs/environment/versions.md`
 

@@ -19,7 +19,7 @@
   - [5. Reflection (end of day)](#5-reflection-end-of-day)
   - [Change log](#change-log)
 
-> **Week 1 · Day 2** · Deliverable for `nvidia/week-01/day-02`
+> **Week 1 · Day 2** · Deliverable for `nvidia/w01/d02`
 > Status: **draft** · Last updated: **2026-09-27** · Revisit: end of Week 8 (v2, after every layer is hands-on)
 
 **Purpose.** Place every framework: what it solves, what it sits on, when to use it, and — most important — **when not to**.
