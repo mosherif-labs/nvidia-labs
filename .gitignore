@@ -224,3 +224,7 @@ app/security/audit*.jsonl
 
 # Local eval reports (CI uploads its own as an artifact)
 app/eval/report-*.json
+
+# Day 9 runtime records (dead letters, escalations)
+app/tools_resilience/dead_letters.jsonl
+app/tools_resilience/needs_human.jsonl
