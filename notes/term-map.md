@@ -45,4 +45,13 @@ Pair each term with its runtime-agent idea **from memory**, then check against t
 | **Tool alias** | Function schema `name` ✅ | `get_alert`, `search_policy`: the identifier the model calls; renamed to `t1..t4` in `desc_test_anon.py` |
 | **Custom agent `description`** | Tool description the model routes on ✅ | The docstring → `description` in `schemas()`; blanked to `"Tool."` in `desc_test.py` |
 
+
+## GH-600 Day 15 ↔ agent memory (W3 D1 `m5-rows`)
+
+| GH-600 term | Agent memory term | In my lab |
+|---|---|---|
+| **Copilot Memory** | Long-term semantic / episodic store ✅ | `app/memory/memory.py`: `PostgresStore` (Supabase + pgvector), namespaces `("investigator", kind)`, time-weighted `recall()` |
+| **`AGENTS.md` / custom instructions** | Procedural memory ✅ | `SYSTEM` in `app/tools/agent.py` (+ POL-05 "human approves every SAR") |
+| **Session context** | Short-term (thread) memory ✅ | `app/memory/chat.py`: buffer vs summary + buffer; persisted by the checkpointer (Day 12) |
+
 Sources: [ADK tool confirmation](https://adk.dev/tools-custom/confirmation/) · [ADK callbacks](https://adk.dev/callbacks/types-of-callbacks/) · [Claude tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview) · [Claude Agent SDK permissions](https://code.claude.com/docs/en/agent-sdk/permissions)
