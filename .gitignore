@@ -228,3 +228,6 @@ app/eval/report-*.json
 # Day 9 runtime records (dead letters, escalations)
 app/tools_resilience/dead_letters.jsonl
 app/tools_resilience/needs_human.jsonl
+
+# Day 12 LangGraph checkpoints (local SQLite state)
+app/langgraph/*.db
