@@ -231,3 +231,6 @@ app/tools_resilience/needs_human.jsonl
 
 # Day 12 LangGraph checkpoints (local SQLite state)
 app/langgraph/*.db
+
+# Day 13 Milvus Lite store (local, rebuilt by `baseline.py ingest`)
+labs/rag/baseline/rag.db
