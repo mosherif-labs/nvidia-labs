@@ -234,3 +234,6 @@ app/langgraph/*.db
 
 # Day 13 Milvus Lite store (local, rebuilt by `baseline.py ingest`)
 labs/rag/baseline/rag.db
+app/eval/report3-*.json
+# nat eval output (per run, regenerated)
+.tmp/

@@ -1,7 +1,7 @@
 llms:
   nim_llm:
     _type: nim
-    model_name: nvidia/nemotron-3-super-120b-a12b
+    model_name: nvidia/nemotron-3.5-lightning-30b-a3b   # Super 404s on this account since 2026-10-27 (Day 13)
     temperature: 1.0
     top_p: 0.95
     max_tokens: 4096    # NAT's NIM default is 300; a reasoning model's thoughts get cut off mid-sentence
@@ -27,3 +27,15 @@ workflow:
   llm_name: nim_llm
   verbose: true
   parse_agent_response_max_retries: 3
+
+eval:
+  general:
+    output_dir: ./.tmp/eval/
+    max_concurrency: 2           # lower it if the judge calls hit 429 Too Many Requests
+    dataset:
+      _type: json
+      file_path: data/golden_nat.json
+  evaluators:
+    trajectory_accuracy:
+      _type: trajectory
+      llm_name: nim_llm

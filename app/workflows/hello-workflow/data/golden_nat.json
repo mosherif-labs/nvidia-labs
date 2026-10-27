@@ -1,0 +1,67 @@
+[
+  {
+    "id": "g01",
+    "question": "Sum the amounts in alert A-1001. Which policy does the pattern match, and what action does it require?",
+    "answer": "28500; POL-01; escalat"
+  },
+  {
+    "id": "g02",
+    "question": "Does alert A-1002 need enhanced due diligence? If so, by when?",
+    "answer": "5 business days"
+  },
+  {
+    "id": "g03",
+    "question": "Can alert A-1003 be closed? Name the policy.",
+    "answer": "POL-04"
+  },
+  {
+    "id": "g04",
+    "question": "Of alerts A-1001, A-1002 and A-1003, which one has a total amount above 200,000?",
+    "answer": "A-1002"
+  },
+  {
+    "id": "g05",
+    "question": "How much cash did Northwind Trading deposit last year?",
+    "answer": ""
+  },
+  {
+    "id": "g06",
+    "question": "What is the total of the amounts in alert A-1003?",
+    "answer": "12600"
+  },
+  {
+    "id": "g07",
+    "question": "Who must approve a case that recommends a SAR before it is filed? Cite the policy.",
+    "answer": "POL-05; human"
+  },
+  {
+    "id": "g08",
+    "question": "Does any single deposit in alert A-1001 require a currency transaction report? Cite the policy.",
+    "answer": "POL-02"
+  },
+  {
+    "id": "g09",
+    "question": "What is the largest single amount across alerts A-1001, A-1002 and A-1003?",
+    "answer": "120000"
+  },
+  {
+    "id": "g11",
+    "question": "What pattern and total amount does alert A-1004 show?",
+    "answer": ""
+  },
+  {
+    "id": "g12",
+    "question": "What cash amount triggers a currency transaction report?",
+    "answer": "10000"
+  },
+  {
+    "id": "g13",
+    "question": "How many days do we have to file a SAR?",
+    "answer": ""
+  },
+  {
+    "id": "g14",
+    "question": "A customer wires 150,000 to a high-risk jurisdiction. Is enhanced due diligence required, and by when?",
+    "answer": "5 business days"
+  }
+]
