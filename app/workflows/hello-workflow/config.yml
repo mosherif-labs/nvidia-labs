@@ -43,6 +43,12 @@ eval:
     dataset:
       _type: json
       file_path: data/golden_nat.json
+    profiler:                    # Day 16: profile the same golden run
+      compute_llm_metrics: true
+      csv_exclude_io_text: true
+      workflow_runtime_forecast: true
+      bottleneck_analysis:
+        enable_nested_stack: true
   evaluators:
     trajectory_accuracy:
       _type: trajectory

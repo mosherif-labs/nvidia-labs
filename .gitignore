@@ -240,3 +240,6 @@ app/eval/report3-*.json
 
 # Windows NAT venv (hello-workflow/.venv is the WSL one)
 .venv-*/
+
+# Day 16 Optuna study (local SQLite, rerun with tune.py)
+app/eval/optuna.db

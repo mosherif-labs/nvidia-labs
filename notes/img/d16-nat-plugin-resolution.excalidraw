@@ -1,0 +1,433 @@
+{
+ "type": "excalidraw",
+ "version": 2,
+ "source": "claude",
+ "elements": [
+  {
+   "id": "l1",
+   "type": "text",
+   "x": 20,
+   "y": 10,
+   "width": 858.0000000000001,
+   "height": 26.0,
+   "text": "How `_type: react_agent` becomes a LangGraph agent with a LangChain ChatNVIDIA",
+   "originalText": "How `_type: react_agent` becomes a LangGraph agent with a LangChain ChatNVIDIA",
+   "fontSize": 20,
+   "fontFamily": 2,
+   "textAlign": "left",
+   "verticalAlign": "top",
+   "strokeColor": "#1e1e1e",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "b2",
+   "type": "rectangle",
+   "x": 20,
+   "y": 60,
+   "width": 250,
+   "height": 110,
+   "strokeColor": "#1971c2",
+   "backgroundColor": "#e7f5ff",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "boundElements": [
+    {
+     "type": "text",
+     "id": "t2"
+    }
+   ],
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "id": "t2",
+   "type": "text",
+   "x": 28,
+   "y": 68,
+   "width": 234,
+   "height": 94,
+   "text": "1 \u00b7 pip install\nnvidia-nat[langchain]\nentry_points.txt:\n[nat.components] nat_langchain",
+   "originalText": "1 \u00b7 pip install\nnvidia-nat[langchain]\nentry_points.txt:\n[nat.components] nat_langchain",
+   "fontSize": 15,
+   "fontFamily": 2,
+   "textAlign": "center",
+   "verticalAlign": "middle",
+   "containerId": "b2",
+   "strokeColor": "#1971c2",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "a3",
+   "type": "arrow",
+   "x": 275,
+   "y": 115,
+   "width": 40,
+   "height": 0,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     40,
+     0
+    ]
+   ],
+   "strokeColor": "#1e1e1e",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "endArrowhead": "arrow"
+  },
+  {
+   "id": "b4",
+   "type": "rectangle",
+   "x": 320,
+   "y": 60,
+   "width": 250,
+   "height": 110,
+   "strokeColor": "#9c36b5",
+   "backgroundColor": "#f8f0fc",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "boundElements": [
+    {
+     "type": "text",
+     "id": "t4"
+    }
+   ],
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "id": "t4",
+   "type": "text",
+   "x": 328,
+   "y": 68,
+   "width": 234,
+   "height": 94,
+   "text": "2 \u00b7 NAT starts\nloader.py imports every\n[nat.components] module\n\u2192 decorators fill registry",
+   "originalText": "2 \u00b7 NAT starts\nloader.py imports every\n[nat.components] module\n\u2192 decorators fill registry",
+   "fontSize": 15,
+   "fontFamily": 2,
+   "textAlign": "center",
+   "verticalAlign": "middle",
+   "containerId": "b4",
+   "strokeColor": "#9c36b5",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "a5",
+   "type": "arrow",
+   "x": 575,
+   "y": 115,
+   "width": 40,
+   "height": 0,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     40,
+     0
+    ]
+   ],
+   "strokeColor": "#1e1e1e",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "endArrowhead": "arrow"
+  },
+  {
+   "id": "b6",
+   "type": "rectangle",
+   "x": 620,
+   "y": 60,
+   "width": 250,
+   "height": 110,
+   "strokeColor": "#e8590c",
+   "backgroundColor": "#fff4e6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "boundElements": [
+    {
+     "type": "text",
+     "id": "t6"
+    }
+   ],
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "id": "t6",
+   "type": "text",
+   "x": 628,
+   "y": 68,
+   "width": 234,
+   "height": 94,
+   "text": "3 \u00b7 registry\n\"react_agent\" \u2192\nreact_agent_workflow\nwrappers=[LANGCHAIN]",
+   "originalText": "3 \u00b7 registry\n\"react_agent\" \u2192\nreact_agent_workflow\nwrappers=[LANGCHAIN]",
+   "fontSize": 15,
+   "fontFamily": 2,
+   "textAlign": "center",
+   "verticalAlign": "middle",
+   "containerId": "b6",
+   "strokeColor": "#e8590c",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "a7",
+   "type": "arrow",
+   "x": 745,
+   "y": 175,
+   "width": 0,
+   "height": 40,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     40
+    ]
+   ],
+   "strokeColor": "#1e1e1e",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "endArrowhead": "arrow"
+  },
+  {
+   "id": "b8",
+   "type": "rectangle",
+   "x": 620,
+   "y": 220,
+   "width": 250,
+   "height": 120,
+   "strokeColor": "#2f9e44",
+   "backgroundColor": "#ebfbee",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "boundElements": [
+    {
+     "type": "text",
+     "id": "t8"
+    }
+   ],
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "id": "t8",
+   "type": "text",
+   "x": 628,
+   "y": 228,
+   "width": 234,
+   "height": 104,
+   "text": "4 \u00b7 build\nbuilder.get_llm(nim_llm,\n wrapper_type=LANGCHAIN)\n\u2192 nim_langchain() \u2192 ChatNVIDIA\ntools \u2192 LangChain tools",
+   "originalText": "4 \u00b7 build\nbuilder.get_llm(nim_llm,\n wrapper_type=LANGCHAIN)\n\u2192 nim_langchain() \u2192 ChatNVIDIA\ntools \u2192 LangChain tools",
+   "fontSize": 15,
+   "fontFamily": 2,
+   "textAlign": "center",
+   "verticalAlign": "middle",
+   "containerId": "b8",
+   "strokeColor": "#2f9e44",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "a9",
+   "type": "arrow",
+   "x": 615,
+   "y": 280,
+   "width": -40,
+   "height": 0,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     -40,
+     0
+    ]
+   ],
+   "strokeColor": "#1e1e1e",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "endArrowhead": "arrow"
+  },
+  {
+   "id": "b10",
+   "type": "rectangle",
+   "x": 320,
+   "y": 220,
+   "width": 250,
+   "height": 120,
+   "strokeColor": "#1e1e1e",
+   "backgroundColor": "#f8f9fa",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "boundElements": [
+    {
+     "type": "text",
+     "id": "t10"
+    }
+   ],
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "id": "t10",
+   "type": "text",
+   "x": 328,
+   "y": 228,
+   "width": 234,
+   "height": 104,
+   "text": "5 \u00b7 ReActAgentGraph\n(llm, tools).build_graph()\n\u2192 compiled LangGraph",
+   "originalText": "5 \u00b7 ReActAgentGraph\n(llm, tools).build_graph()\n\u2192 compiled LangGraph",
+   "fontSize": 15,
+   "fontFamily": 2,
+   "textAlign": "center",
+   "verticalAlign": "middle",
+   "containerId": "b10",
+   "strokeColor": "#1e1e1e",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "b11",
+   "type": "rectangle",
+   "x": 20,
+   "y": 220,
+   "width": 250,
+   "height": 120,
+   "strokeColor": "#1971c2",
+   "backgroundColor": "transparent",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "boundElements": [
+    {
+     "type": "text",
+     "id": "t11"
+    }
+   ],
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "id": "t11",
+   "type": "text",
+   "x": 28,
+   "y": 228,
+   "width": 234,
+   "height": 104,
+   "text": "config.yml\nllms.nim_llm: _type: nim\nworkflow: _type: react_agent\n(no mention of LangChain)",
+   "originalText": "config.yml\nllms.nim_llm: _type: nim\nworkflow: _type: react_agent\n(no mention of LangChain)",
+   "fontSize": 15,
+   "fontFamily": 2,
+   "textAlign": "center",
+   "verticalAlign": "middle",
+   "containerId": "b11",
+   "strokeColor": "#1971c2",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "a12",
+   "type": "arrow",
+   "x": 275,
+   "y": 280,
+   "width": 40,
+   "height": 0,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     40,
+     0
+    ]
+   ],
+   "strokeColor": "#1e1e1e",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "endArrowhead": "arrow"
+  },
+  {
+   "id": "l13",
+   "type": "text",
+   "x": 20,
+   "y": 355,
+   "width": 885.5000000000001,
+   "height": 18.2,
+   "text": "The config names types; the installed plugin decides the framework. Uninstall the plugin \u2192 \"react_agent\" not found.",
+   "originalText": "The config names types; the installed plugin decides the framework. Uninstall the plugin \u2192 \"react_agent\" not found.",
+   "fontSize": 14,
+   "fontFamily": 2,
+   "textAlign": "left",
+   "verticalAlign": "top",
+   "strokeColor": "#495057",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  }
+ ],
+ "appState": {
+  "viewBackgroundColor": "#ffffff"
+ },
+ "files": {}
+}

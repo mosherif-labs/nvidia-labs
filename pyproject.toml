@@ -16,6 +16,7 @@ dependencies = [
     "milvus-lite>=3.2.2",
     "openai>=1.54",
     "openinference-instrumentation-openai>=0.1.66",
+    "optuna>=5.0.0",
     "psycopg[binary]>=3.3.6",
     "pydantic>=2.9",
     "pymilvus>=3.0.2",

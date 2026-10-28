@@ -1,0 +1,386 @@
+{
+ "type": "excalidraw",
+ "version": 2,
+ "source": "claude",
+ "elements": [
+  {
+   "id": "l1",
+   "type": "text",
+   "x": 20,
+   "y": 10,
+   "width": 660.0,
+   "height": 26.0,
+   "text": "Reflexion in reflexion.py: learning without touching weights",
+   "originalText": "Reflexion in reflexion.py: learning without touching weights",
+   "fontSize": 20,
+   "fontFamily": 2,
+   "textAlign": "left",
+   "verticalAlign": "top",
+   "strokeColor": "#1e1e1e",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "b2",
+   "type": "rectangle",
+   "x": 20,
+   "y": 60,
+   "width": 230,
+   "height": 100,
+   "strokeColor": "#1971c2",
+   "backgroundColor": "#e7f5ff",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "boundElements": [
+    {
+     "type": "text",
+     "id": "t2"
+    }
+   ],
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "id": "t2",
+   "type": "text",
+   "x": 28,
+   "y": 68,
+   "width": 214,
+   "height": 84,
+   "text": "ACTOR \u00b7 solve()\nagent.run(lessons + facts\n+ task), MAX_STEPS=2",
+   "originalText": "ACTOR \u00b7 solve()\nagent.run(lessons + facts\n+ task), MAX_STEPS=2",
+   "fontSize": 15,
+   "fontFamily": 2,
+   "textAlign": "center",
+   "verticalAlign": "middle",
+   "containerId": "b2",
+   "strokeColor": "#1971c2",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "a3",
+   "type": "arrow",
+   "x": 255,
+   "y": 110,
+   "width": 70,
+   "height": 1,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     70,
+     0
+    ]
+   ],
+   "strokeColor": "#1e1e1e",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "endArrowhead": "arrow",
+   "strokeStyle": "solid"
+  },
+  {
+   "id": "b4",
+   "type": "rectangle",
+   "x": 330,
+   "y": 60,
+   "width": 230,
+   "height": 100,
+   "strokeColor": "#e8590c",
+   "backgroundColor": "#fff4e6",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "boundElements": [
+    {
+     "type": "text",
+     "id": "t4"
+    }
+   ],
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "id": "t4",
+   "type": "text",
+   "x": 338,
+   "y": 68,
+   "width": 214,
+   "height": 84,
+   "text": "EVALUATOR \u00b7 score()\nDay 8 deterministic:\nmust_include + tools",
+   "originalText": "EVALUATOR \u00b7 score()\nDay 8 deterministic:\nmust_include + tools",
+   "fontSize": 15,
+   "fontFamily": 2,
+   "textAlign": "center",
+   "verticalAlign": "middle",
+   "containerId": "b4",
+   "strokeColor": "#e8590c",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "a5",
+   "type": "arrow",
+   "x": 565,
+   "y": 110,
+   "width": 70,
+   "height": 1,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     70,
+     0
+    ]
+   ],
+   "strokeColor": "#1e1e1e",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "endArrowhead": "arrow",
+   "strokeStyle": "solid"
+  },
+  {
+   "id": "l6",
+   "type": "text",
+   "x": 575,
+   "y": 85,
+   "width": 30.800000000000004,
+   "height": 18.2,
+   "text": "FAIL",
+   "originalText": "FAIL",
+   "fontSize": 14,
+   "fontFamily": 2,
+   "textAlign": "left",
+   "verticalAlign": "top",
+   "strokeColor": "#495057",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "b7",
+   "type": "rectangle",
+   "x": 640,
+   "y": 60,
+   "width": 250,
+   "height": 100,
+   "strokeColor": "#9c36b5",
+   "backgroundColor": "#f8f0fc",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "boundElements": [
+    {
+     "type": "text",
+     "id": "t7"
+    }
+   ],
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "id": "t7",
+   "type": "text",
+   "x": 648,
+   "y": 68,
+   "width": 234,
+   "height": 84,
+   "text": "SELF-REFLECTION \u00b7 reflect()\nsees question + wrong answer\n+ tools used, NEVER the key",
+   "originalText": "SELF-REFLECTION \u00b7 reflect()\nsees question + wrong answer\n+ tools used, NEVER the key",
+   "fontSize": 15,
+   "fontFamily": 2,
+   "textAlign": "center",
+   "verticalAlign": "middle",
+   "containerId": "b7",
+   "strokeColor": "#9c36b5",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "a8",
+   "type": "arrow",
+   "x": 765,
+   "y": 165,
+   "width": 1,
+   "height": 60,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     60
+    ]
+   ],
+   "strokeColor": "#1e1e1e",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "endArrowhead": "arrow",
+   "strokeStyle": "solid"
+  },
+  {
+   "id": "l9",
+   "type": "text",
+   "x": 775,
+   "y": 185,
+   "width": 246.40000000000003,
+   "height": 18.2,
+   "text": "remember(\"lessons\") (run 1 only)",
+   "originalText": "remember(\"lessons\") (run 1 only)",
+   "fontSize": 14,
+   "fontFamily": 2,
+   "textAlign": "left",
+   "verticalAlign": "top",
+   "strokeColor": "#495057",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "b10",
+   "type": "rectangle",
+   "x": 640,
+   "y": 230,
+   "width": 250,
+   "height": 90,
+   "strokeColor": "#2f9e44",
+   "backgroundColor": "#ebfbee",
+   "fillStyle": "solid",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "boundElements": [
+    {
+     "type": "text",
+     "id": "t10"
+    }
+   ],
+   "roundness": {
+    "type": 3
+   }
+  },
+  {
+   "id": "t10",
+   "type": "text",
+   "x": 648,
+   "y": 238,
+   "width": 234,
+   "height": 74,
+   "text": "MEMORY \u00b7 Supabase pgvector\nnamespace (investigator, lessons)",
+   "originalText": "MEMORY \u00b7 Supabase pgvector\nnamespace (investigator, lessons)",
+   "fontSize": 15,
+   "fontFamily": 2,
+   "textAlign": "center",
+   "verticalAlign": "middle",
+   "containerId": "b10",
+   "strokeColor": "#2f9e44",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "a11",
+   "type": "arrow",
+   "x": 635,
+   "y": 275,
+   "width": 500,
+   "height": 110,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     -500,
+     0
+    ],
+    [
+     -500,
+     -110
+    ]
+   ],
+   "strokeColor": "#2f9e44",
+   "strokeWidth": 2,
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "endArrowhead": "arrow",
+   "strokeStyle": "dashed"
+  },
+  {
+   "id": "l12",
+   "type": "text",
+   "x": 250,
+   "y": 285,
+   "width": 462.00000000000006,
+   "height": 18.2,
+   "text": "run 2: recall(\"lessons\", question) \u2192 into the Actor's prompt",
+   "originalText": "run 2: recall(\"lessons\", question) \u2192 into the Actor's prompt",
+   "fontSize": 14,
+   "fontFamily": 2,
+   "textAlign": "left",
+   "verticalAlign": "top",
+   "strokeColor": "#2f9e44",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  },
+  {
+   "id": "l13",
+   "type": "text",
+   "x": 20,
+   "y": 340,
+   "width": 823.9000000000001,
+   "height": 36.4,
+   "text": "Run 1 = act, fail, write lessons. Run 2 = same budget, lessons recalled. The delta = what the notes taught.\nLeak check: if a lesson contains the answer, run 2 measures memorization, not learning.",
+   "originalText": "Run 1 = act, fail, write lessons. Run 2 = same budget, lessons recalled. The delta = what the notes taught.\nLeak check: if a lesson contains the answer, run 2 measures memorization, not learning.",
+   "fontSize": 14,
+   "fontFamily": 2,
+   "textAlign": "left",
+   "verticalAlign": "top",
+   "strokeColor": "#495057",
+   "roughness": 0,
+   "opacity": 100,
+   "angle": 0,
+   "lineHeight": 1.25
+  }
+ ],
+ "appState": {
+  "viewBackgroundColor": "#ffffff"
+ },
+ "files": {}
+}
