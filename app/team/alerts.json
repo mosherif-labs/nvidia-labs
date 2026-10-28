@@ -1,0 +1,13 @@
+[
+ {"id": "t01", "alert": "Alert A-1001: three cash deposits in 7 days.", "expected": ["triage", "investigator", "report_writer"]},
+ {"id": "t02", "alert": "Alert A-1002: two large wires to a high-risk jurisdiction.", "expected": ["triage", "investigator", "report_writer"]},
+ {"id": "t03", "alert": "Alert A-1003: equal monthly payments to several people.", "expected": ["triage", "report_writer"]},
+ {"id": "t04", "alert": "Alert A-9999: unusual card activity overnight.", "expected": ["triage"]},
+ {"id": "t05", "alert": "Alert A-1001 re-review: the customer made another 9,700 cash deposit today.", "expected": ["triage", "investigator", "report_writer"]},
+ {"id": "t06", "alert": "Alert A-1002: sanctions screening says the counterparty name resembles a listed entity.", "expected": ["triage", "investigator", "report_writer"]},
+ {"id": "t07", "alert": "Alert A-1003: payroll, but one payment this month went to a new account abroad.", "expected": ["triage", "investigator", "report_writer"]},
+ {"id": "t08", "alert": "A customer called: they think their online banking was hacked. No alert id yet.", "expected": ["triage"]},
+ {"id": "t09", "alert": "Alert A-1001: the same director also controls the company behind alert A-1002.", "expected": ["triage", "investigator", "report_writer"]},
+ {"id": "t10", "alert": "Alert A-1003 re-raised by the model: identical payroll payments as last month.", "expected": ["triage", "report_writer"]},
+ {"id": "t11", "alert": "Alerts A-1001 and A-1002: one report says the deposit was 9,500, another says 95,000, and it went into account ACC-404, which we can't find.", "expected": ["triage", "investigator", "report_writer"]}
+]
