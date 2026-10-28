@@ -1,3 +1,11 @@
+general:
+  telemetry:
+    tracing:
+      phoenix:
+        _type: phoenix
+        endpoint: http://localhost:6006/v1/traces
+        project: aai-nat
+
 llms:
   nim_llm:
     _type: nim

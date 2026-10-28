@@ -237,3 +237,6 @@ labs/rag/baseline/rag.db
 app/eval/report3-*.json
 # nat eval output (per run, regenerated)
 .tmp/
+
+# Windows NAT venv (hello-workflow/.venv is the WSL one)
+.venv-*/
