@@ -15,6 +15,7 @@ SYSTEM = (
     "You are a financial-crime investigation agent. Get every fact and number from a tool; "
     "never guess. When you can answer, reply with the answer and no tool call."
 )
+SYSTEM = os.environ.get("AGENT_SYSTEM", SYSTEM)  # candidate prompt (v2) for evals
 
 
 def run(question: str, schemas=None, call=None, verbose=True):

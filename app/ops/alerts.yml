@@ -1,0 +1,19 @@
+groups:
+  - name: agent
+    rules:
+      - alert: ToolErrorRateHigh
+        expr: |
+          sum by (version) (rate(agent_tool_calls_total{status="error"}[5m]))
+            / sum by (version) (rate(agent_tool_calls_total[5m])) > 0.05
+        for: 1m
+        labels:
+          severity: page
+        annotations:
+          summary: "Tool error rate above 5% for {{ $labels.version }}"
+      - alert: AgentDown
+        expr: up{job="agent"} == 0
+        for: 1m
+        labels:
+          severity: page
+        annotations:
+          summary: "Agent metrics endpoint {{ $labels.instance }} is down"

@@ -1,0 +1,16 @@
+# 1 Task success rate
+sum by (version) (agent_tasks_total{result="pass"}) / sum by (version) (agent_tasks_total)
+# 2 Tool error rate (live, 5-minute window: the alert uses the same expression)
+sum by (version) (rate(agent_tool_calls_total{status="error"}[5m])) / sum by (version) (rate(agent_tool_calls_total[5m]))
+# 3 Loops / timeouts: tasks that hit max_steps
+sum by (version) (agent_stops_total{stopped="max_steps"})
+# 4 p95 task latency (whole run)
+histogram_quantile(0.95, sum by (le, version) (agent_task_latency_seconds_bucket))
+# 5 p95 latency per tool
+histogram_quantile(0.95, sum by (le, version, tool) (agent_tool_latency_seconds_bucket))
+# 6 LLM calls per task (cost proxy)
+sum by (version) (agent_llm_calls_total) / sum by (version) (agent_tasks_total)
+# 7 Escalation rate
+sum by (version) (agent_escalations_total) / sum by (version) (agent_tasks_total)
+# 8 Health: 1 = scrape target up, 0 = down
+up{job="agent"}
