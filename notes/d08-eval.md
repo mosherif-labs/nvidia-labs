@@ -25,7 +25,7 @@ _Docs closed. Placed before running anything._
 
 **In git today** (I said all four: true, with two caveats):
 - Prompt (`SYSTEM`), tool schemas (docstrings + pydantic in `registry.py`), sampling (`temperature=1.0, top_p=0.95`), policies (`app/data.py`, tracked despite the `.gitignore` line) and guardrails (`app/security/`): all in git.
-- **Model: only the default is in git.** `AGENT_MODEL` in `.env` (gitignored) overrides it silently, and a hosted name like `nvidia/nemotron-3-super-120b-a12b` is not frozen weights. The provider can update what's behind it.
+- **Model: only the default is in git.** `AGENT_MODEL` in `.env` (gitignored) overrides it silently, and a hosted name like `nvidia/nemotron-3.5-super-vl-120b-a12b` is not frozen weights. The provider can update what's behind it.
 
 **One versioned unit:** version these **together**. `run_evals.py` hashes prompt + tool schemas + model into one id, so every report names the agent that produced it (AAI 8.4). Comparing a new version with the old one (AAI 8.3) only means something when both are pinned like this.
 
@@ -36,7 +36,7 @@ _Docs closed. Placed before running anything._
 
 ## §3 Golden run
 
-**Agent version `858fb3be330b`** (prompt + tool schemas + `nvidia/nemotron-3-super-120b-a12b`).
+**Agent version `858fb3be330b`** (prompt + tool schemas + `nvidia/nemotron-3.5-super-vl-120b-a12b`).
 
 | Run | Pass rate | Failures | Cause |
 |---|---|---|---|

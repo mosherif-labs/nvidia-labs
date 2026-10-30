@@ -68,7 +68,7 @@ _Docs closed. Placed before reading anything._
 
 ## §4 First answers
 
-_Model: `nvidia/nemotron-3.5-lightning-30b-a3b` (`AGENT_MODEL`). On 2026-10-27 the hosted `nemotron-3-super-120b-a12b` and `nemotron-nano-3-30b-a3b` returned 404 "Function … Not found for account"._
+_Model: `nvidia/nemotron-3.5-lightning-30b-a3b` (`AGENT_MODEL`). On 2026-10-27 the hosted `nemotron-3.5-super-vl-120b-a12b` and `nemotron-nano-3-30b-a3b` returned 404 "Function … Not found for account"._
 
 - **Q1** *What cash amount triggers a CTR?* → `USD 10,000`. Retrieval was right (CTR pamphlet p1 is the top hit, our structuring rule #2), but the answer **has no citation** despite the system prompt, is **imprecise** (FinCEN: cash *over* $10,000 in a day, including aggregated transactions), and its "USD 10,000" wording echoes our synthetic policy, not the pamphlet. A generation failure, not a retrieval one.
 - **Q2** *The bank's policy on cryptocurrency ATMs?* → "The policy does not mention cryptocurrency ATMs." **Correct abstention**: no invented policy. But retrieval still returned 5 chunks (SAR bulletin, our policies) that have nothing to do with crypto: vector search always returns top-k, however weak the match. Without a similarity threshold, the LLM's abstention is the only guard.

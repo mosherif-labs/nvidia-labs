@@ -37,7 +37,7 @@ def calculator(expression: str) -> str:
 TOOLS = [get_alert, search_policy, calculator]
 MAX_STEPS = int(os.environ.get("MAX_STEPS", "8"))
 base_llm = ChatOpenAI(
-    model=os.environ.get("AGENT_MODEL", "nvidia/nemotron-3-super-120b-a12b"),
+    model=os.environ.get("AGENT_MODEL", "nvidia/nemotron-3.5-super-vl-120b-a12b"),
     base_url=os.environ.get("NIM_BASE_URL", "https://integrate.api.nvidia.com/v1"),
     api_key=os.environ["NVIDIA_API_KEY"],
     temperature=1.0,

@@ -147,7 +147,7 @@ Objective 5.2 names *CoT and task decomposition*, both covered. These others exi
 
 | Pattern | Group | One-line idea | Related to |
 |---|---|---|---|
-| **Reasoning models / thinking mode** | Reasoning | Model trained to reason before answering; switched per request (Nemotron: `chat_template_kwargs: {"enable_thinking": false}`, or `low_effort`) ([NIM: Nemotron 3 Super, Reasoning](https://docs.nvidia.com/nim/large-language-models/2.0.4/turbo/get-started-nemotron-3-super-120b-a12b.html#reasoning)) | Built-in CoT. **Day 4 side quest** `sq-reasoning-toggle`; Day 16 tuning lever |
+| **Reasoning models / thinking mode** | Reasoning | Model trained to reason before answering; switched per request (Nemotron: `chat_template_kwargs: {"enable_thinking": false}`, or `low_effort`) ([NIM: Nemotron 3 Super, Reasoning](https://docs.nvidia.com/nim/large-language-models/2.0.4/turbo/get-started-nemotron-3.5-super-vl-120b-a12b.html#reasoning)) | Built-in CoT. **Day 4 side quest** `sq-reasoning-toggle`; Day 16 tuning lever |
 | Least-to-most | Reasoning | Easier subquestions first, solved in order, answers fed forward | CoT + task decomposition |
 | Plan-and-Solve | Reasoning | Zero-shot CoT with "make a plan, then carry it out" | Zero-shot CoT + plan-and-execute, no tools |
 | Program-of-thought / PAL | Reasoning | Model writes code for the maths; an interpreter runs it | Fixes CoT arithmetic; like the `calculator` tool |

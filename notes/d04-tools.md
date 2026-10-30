@@ -1,7 +1,7 @@
 # Tools a model can't misuse
 
 > NCP-AAI W2 D1 (AAI Day 4) · Mon 2026-10-05 · paired with GH-600 D8 (which tools each agent gets)
-> Exam objectives: AAI 2.3 · 2.1 · No GPU: hosted NIM (`nvidia/nemotron-3-super-120b-a12b`)
+> Exam objectives: AAI 2.3 · 2.1 · No GPU: hosted NIM (`nvidia/nemotron-3.5-super-vl-120b-a12b`)
 > All data is synthetic (reuses Day 2's `app/data.py`).
 
 | File | What it is |

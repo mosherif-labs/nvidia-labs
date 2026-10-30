@@ -1,7 +1,7 @@
 # ReAct vs Plan-and-Execute with a human gate
 
 > NCP-AAI W1 D6 (AAI Day 2) · Sat 2026-10-03 · paired with GH-600 D6 capstone (planner → approve → implementer)
-> Exam objectives: AAI 1.2 · 1.6 · 5.2 · 5.3 · 10.4 · No GPU: hosted NIM (`nvidia/nemotron-3-super-120b-a12b`)
+> Exam objectives: AAI 1.2 · 1.6 · 5.2 · 5.3 · 10.4 · No GPU: hosted NIM (`nvidia/nemotron-3.5-super-vl-120b-a12b`)
 > All data is synthetic.
 
 | File | What it is |

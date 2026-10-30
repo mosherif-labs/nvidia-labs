@@ -11,7 +11,7 @@ nim = AsyncOpenAI(
     base_url=os.environ.get("NIM_BASE_URL", "https://integrate.api.nvidia.com/v1"),
     api_key=os.environ["NVIDIA_API_KEY"],
 )
-MODEL = os.environ.get("AGENT_MODEL", "nvidia/nemotron-3-super-120b-a12b")
+MODEL = os.environ.get("AGENT_MODEL", "nvidia/nemotron-3.5-super-vl-120b-a12b")
 
 
 def to_openai(tool):  # MCP tool -> OpenAI/NIM function schema

@@ -10,7 +10,7 @@ client = OpenAI(
     api_key=os.environ["NVIDIA_API_KEY"],
     max_retries=6,  # the shared hosted NIM returns 429 under eval load; SDK backs off exponentially
 )
-MODEL = os.environ.get("AGENT_MODEL", "nvidia/nemotron-3-super-120b-a12b")
+MODEL = os.environ.get("AGENT_MODEL", "nvidia/nemotron-3.5-super-vl-120b-a12b")
 MAX_STEPS = int(os.environ.get("MAX_STEPS", "8"))
 SYSTEM = (
     "You are a financial-crime investigation agent. Get every fact and number from a tool; "
