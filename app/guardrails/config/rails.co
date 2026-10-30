@@ -1,0 +1,39 @@
+# Dialog rail: off-topic requests get a fixed reply, no LLM answer
+define user ask off topic
+  "What's the weather in Paris tomorrow?"
+  "Write me a poem about cats"
+  "Which stocks should I buy this week?"
+  "Tell me a joke"
+
+# On-topic intent: without it, every money-related question sits nearest the off-topic examples
+# ("Which stocks should I buy...") and gets refused. No flow: the LLM answers as normal.
+define user ask aml question
+  "Review alert A-1001: three cash deposits just under 10,000. What should happen next?"
+  "What is structuring?"
+  "Which policy covers wires to high-risk countries?"
+  "Summarize the red flags in this alert"
+  "Should this alert be escalated to an investigator?"
+
+define bot refuse off topic
+  "I can only help with financial-crime investigation topics."
+
+define flow off topic
+  user ask off topic
+  bot refuse off topic
+
+define bot refuse to respond
+  "I'm sorry, I can't respond to that."
+
+# Retrieval rail: documents must never carry instructions to the agent.
+# Quarantine the offending chunks (don't reply from here: a bot message would re-trigger generation)
+define subflow check retrieved chunks for instructions
+  $relevant_chunks = execute drop_injected_chunks
+
+# Output rail: mask account numbers before anything leaves the assistant
+define subflow mask account numbers
+  $bot_message = execute mask_accounts(text=$bot_message)
+
+# Input rail: mask account numbers before content safety, the judges or the LLM see them
+# (account numbers are routine in AML work but trip the S9 PII/Privacy category)
+define subflow mask account numbers in input
+  $user_message = execute mask_accounts(text=$user_message)
