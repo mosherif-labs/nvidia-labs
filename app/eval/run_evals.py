@@ -12,7 +12,7 @@ def norm(s: str) -> str:
     # NFKC: narrow/no-break spaces -> " ", curly quotes stay; then unicode hyphens/dashes -> "-"
     s = unicodedata.normalize("NFKC", s or "").lower().replace("\u2019", "'")
     s = re.sub(r"[\u2010-\u2015\u2212]", "-", s)
-    return re.sub(r"(?<=\d),(?=\d)", "", s)  # 28,500 -> 28500
+    return re.sub(r"(?<=\d)[, ](?=\d{3}\b)", "", s)  # 28,500 / 28\u202f500 -> 28500
 
 
 def version() -> str:

@@ -8,6 +8,7 @@ load_dotenv()  # nearest .env, searching up from this file
 client = OpenAI(
     base_url=os.environ.get("NIM_BASE_URL", "https://integrate.api.nvidia.com/v1"),
     api_key=os.environ["NVIDIA_API_KEY"],
+    max_retries=6,  # the shared hosted NIM returns 429 under eval load; SDK backs off exponentially
 )
 MODEL = os.environ.get("AGENT_MODEL", "nvidia/nemotron-3-super-120b-a12b")
 MAX_STEPS = int(os.environ.get("MAX_STEPS", "8"))

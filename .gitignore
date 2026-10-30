@@ -243,3 +243,7 @@ app/eval/report3-*.json
 
 # Day 16 Optuna study (local SQLite, rerun with tune.py)
 app/eval/optuna.db
+
+# Day 20 flywheel runtime data (local feedback store, weekly candidates)
+app/ops/feedback.db
+app/ops/golden-candidates.jsonl
