@@ -1,0 +1,20 @@
+[
+  {
+    "question": "A0007 is flagged. Who is within 2 hops, how much did it send in the last 30 days, and which policy applies?",
+    "sql": "Total amount sent by account A0007 in the last 30 days",
+    "account": "A0007",
+    "docs": "structuring cash deposits escalation"
+  },
+  {
+    "question": "A0012 received many small ACH credits. How many, from which accounts, where did A0012 send money onward, and what does policy say about structuring?",
+    "sql": "Number and total of ACH transactions sent to account A0012 in the last 30 days, grouped by sending account",
+    "account": "A0012",
+    "docs": "structuring below the reporting threshold"
+  },
+  {
+    "question": "Counterparty X005 is in Panama. Which accounts near A0007 paid it, how much in total, and what enhanced due diligence applies to high-risk jurisdictions?",
+    "sql": "Total amount sent to counterparty X005 by each account in the last 30 days",
+    "account": "A0007",
+    "docs": "enhanced due diligence high-risk jurisdiction offshore wire"
+  }
+]

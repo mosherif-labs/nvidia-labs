@@ -256,3 +256,10 @@ labs/rag/index-tuning/volumes/
 labs/rag/index-tuning/standalone_embed.sh
 labs/rag/index-tuning/embedEtcd.yaml
 labs/rag/index-tuning/user.yaml
+
+# Day 27 local stores (rebuilt by etl_pipeline.py / make_data.py)
+labs/rag/etl/etl.db
+labs/rag/etl/manifest.json
+labs/rag/etl/inputs/
+labs/rag/etl/pii_seeds.json
+labs/rag/structured-kg/aml.db
