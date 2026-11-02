@@ -121,3 +121,40 @@ KV per token = 2 × layers × (heads × head_dim) × bytes (NVIDIA blog: Llama 2
 - **Lowest latency for the planner on H100s:** TensorRT-LLM behind Dynamo-Triton (or Dynamo at scale). Config: **FP8** weights + KV on H100, **KV/prefix reuse** for the shared system prompt, **speculative decoding** (EAGLE 3) since planner calls are low-batch, `max_utilization` off (keep `guaranteed_no_evict`) so started plans don't stall. Most control, most work.
 - **Fastest path to production, same model:** **self-hosted NIM**. It picks an optimized profile for the GPU, ships health endpoints and an OpenAI-compatible API, so the agent code only changes `NIM_BASE_URL`. Different answer because the question optimizes engineering time, not milliseconds.
 - **Customer data can't leave the EU:** hosted build.nvidia.com is out. Self-hosted NIM, TRT-LLM + Triton, vLLM and Dynamo all survive if they run in an EU region / on-prem.
+
+## §7 Self-hosted run (Day 30)
+
+> **Not run yet:** needs a Brev L40S instance in VM mode (≈ 75 min cap; check the hourly price in the console first). Commands from the guide, condensed:
+
+```bash
+docker run --rm --gpus all ubuntu nvidia-smi -L
+echo "$NGC_API_KEY" | docker login nvcr.io --username '$oauthtoken' --password-stdin
+export NIM_IMAGE=nvcr.io/nim/meta/llama-3.1-8b-instruct:2.0.13
+docker run --rm --gpus all $NIM_IMAGE list-model-profiles | tee ~/profiles_l40s.txt
+export LOCAL_NIM_CACHE=~/.cache/nim && mkdir -p "$LOCAL_NIM_CACHE"
+docker run -d --name nim --gpus all -u $(id -u) -e NGC_API_KEY -e NIM_MODEL_PROFILE=vllm-bf16-tp1-pp1 \
+  -v "$LOCAL_NIM_CACHE:/opt/nim/.cache" -p 8000:8000 $NIM_IMAGE \
+  nim-serve --enable-auto-tool-choice --tool-call-parser llama3_json
+until curl -sf localhost:8000/v1/health/ready > /dev/null; do sleep 10; done; date
+uvx aiperf profile --model meta/llama-3.1-8b-instruct --tokenizer unsloth/Meta-Llama-3.1-8B-Instruct \
+  --url http://localhost:8000 --endpoint-type chat --streaming --concurrency 8 --request-count 64
+# laptop: brev port-forward <instance> --port 8000:8000, then
+# NIM_BASE_URL=http://localhost:8000/v1 AGENT_MODEL=meta/llama-3.1-8b-instruct uv run python app/tools/agent.py "Alert A-1001: ..."
+```
+
+| | Value |
+|---|---|
+| GPU | L40S 48 GB (the L4 isn't on this model's support matrix) |
+| Compatible profiles (`list-model-profiles`) | |
+| Pinned profile | `vllm-bf16-tp1-pp1` |
+| Minutes `docker run` → `/v1/health/ready` (empty cache) | |
+| Cache size (`du -sh ~/.cache/nim`) | |
+| AIPerf @ concurrency 8: TTFT p50 / p99 | |
+| Inter-token latency p50 | |
+| Output tokens/s | |
+| Agent on the self-hosted NIM: answer correct? tool calls parsed? | |
+| Session cost | |
+
+- **What the cache volume saves:** the next start skips the multi-GB download and only loads weights, so readiness goes from minutes to roughly the model-load time. Without the volume, every restart (or every new pod) pays the download again.
+- **Which metric the planner cares about:** **TTFT** dominates for an agent: each step is a short tool-call JSON, so time to the first token (prefill + queueing) is most of the call; ITL matters for long final reports; tokens/s is the capacity number for the whole team.
+- **When self-hosting beats the hosted API:** steady high volume (a reserved GPU is cheaper per token than per-call pricing), data that can't leave the bank or the region, latency control (pinned profile, prefix reuse, no shared queue), and model choice (fine-tunes, multi-LoRA). For bursty dev and eval work, the hosted API wins.

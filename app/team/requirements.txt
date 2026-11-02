@@ -1,0 +1,13 @@
+# Everything the team needs once graph.py imports rag_pipeline (Day 30)
+langgraph
+langgraph-checkpoint-sqlite
+langchain-openai
+openai
+pydantic
+numpy
+# rag_pipeline -> Day 13's baseline.py + Day 26's hybrid.py
+pypdf
+langchain-text-splitters
+pymilvus[milvus-lite]
+rank-bm25
+langchain-nvidia-ai-endpoints
