@@ -34,7 +34,17 @@ def calculator(expression: str) -> str:
     return reg.calculator(expression)
 
 
-TOOLS = [get_alert, search_policy, calculator]
+from app.multimodal.doc_tool import read_document as _read_document  # Day 29
+
+
+@tool
+def read_document(image_path: str) -> str:
+    """Read a scanned bank statement or invoice image at a local file path; returns JSON with the
+    holder, account, IBAN, period and transactions. Sum amounts with the calculator, never from this output."""
+    return _read_document(image_path)
+
+
+TOOLS = [get_alert, search_policy, calculator, read_document]
 MAX_STEPS = int(os.environ.get("MAX_STEPS", "8"))
 base_llm = ChatOpenAI(
     model=os.environ.get("AGENT_MODEL", "nvidia/nemotron-3.5-super-vl-120b-a12b"),

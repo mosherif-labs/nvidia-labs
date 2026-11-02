@@ -1,0 +1,20 @@
+general:
+  telemetry:
+    tracing:
+      phoenix:
+        _type: phoenix
+        endpoint: http://localhost:6006/v1/traces
+        project: investigation-team
+
+llms:
+  nim_llm:                       # not used by the wrapped graph (it builds its own client); here for evaluators
+    _type: nim
+    model_name: nvidia/nemotron-3.5-super-vl-120b-a12b
+
+workflow:
+  _type: langgraph_wrapper
+  description: Financial-crime investigation team (supervisor + 3 workers)
+  dependencies:
+    - ../../team
+  graph: ../../team/team.py:team
+  env: .env

@@ -264,3 +264,8 @@ labs/rag/etl/inputs/
 labs/rag/etl/pii_seeds.json
 labs/rag/structured-kg/aml.db
 
+
+# Day 29 runtime (approval checkpoints, kill switch, cloned riva clients)
+approvals.db
+KILL_SWITCH
+riva-clients/
