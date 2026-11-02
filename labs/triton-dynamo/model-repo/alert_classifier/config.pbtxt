@@ -1,0 +1,33 @@
+# Day 25 (AAI 7.2 / 7.4): a stateless ONNX alert-triage classifier on Dynamo-Triton.
+# Layout: model-repo/alert_classifier/{config.pbtxt, 1/model.onnx}. At least one numeric
+# version folder is required; the model file itself isn't committed (no real model today).
+
+# Optional; if set it must match the folder name ("alert_classifier").
+name: "alert_classifier"
+
+# Which backend loads 1/model.onnx: ONNX Runtime. ("backend: \"onnxruntime\"" is the newer equivalent.)
+platform: "onnxruntime_onnx"
+
+# >= 1: dim 0 is the batch, so Triton may batch requests together, up to 32 per execution.
+# 0 would mean "no batching" and dims would then include any batch dimension explicitly.
+max_batch_size: 32
+
+# One request = one alert's 128 token ids. dims exclude the batch dimension (Triton adds it).
+input [ { name: "input_ids", data_type: TYPE_INT64, dims: [ 128 ] } ]
+
+# Two logits per alert: [close, escalate].
+output [ { name: "logits", data_type: TYPE_FP32, dims: [ 2 ] } ]
+
+# Server-side request batching for a stateless model. Without the delay it batches whatever is
+# queued right now (no waiting). With it, a request waits up to 100 us for company when a full
+# batch can't be formed: more throughput under load, +<=0.1 ms latency at concurrency 1.
+dynamic_batching {
+  max_queue_delay_microseconds: 100
+}
+
+# Two copies of the model on each GPU, so two batches execute in parallel.
+# Default would be one instance per GPU. Max-throughput concurrency rule: 2 x 32 x 2 = 128.
+instance_group [ { count: 2, kind: KIND_GPU } ]
+
+# Serve only the highest version folder. Same as the default when version_policy is omitted.
+version_policy: { latest: { num_versions: 1 } }
