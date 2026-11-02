@@ -31,6 +31,7 @@ dependencies = [
     "pypdf>=6.21.3",
     "python-dotenv>=1.0",
     "rank-bm25>=0.2.2",
+    "redis>=5",
     "tenacity>=9.2.1",
     "uvicorn>=0.54.0",
 ]

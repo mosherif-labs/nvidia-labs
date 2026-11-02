@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: worker}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: worker}}
+  template:
+    metadata: {labels: {app: worker}}
+    spec:
+      containers:
+        - name: worker
+          image: capstone-service:latest
+          imagePullPolicy: IfNotPresent
+          command: ["python", "worker.py"]
+          env:
+            - {name: REDIS_URL, value: "redis://redis:6379/0"}
+            - {name: POSTGRES_URI, valueFrom: {secretKeyRef: {name: capstone, key: postgres-uri}}}
+            - {name: NVIDIA_API_KEY, valueFrom: {secretKeyRef: {name: capstone, key: nvidia-api-key}}}
+          resources: {requests: {cpu: 250m, memory: 512Mi}, limits: {memory: 1Gi}}
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata: {name: worker}
+spec:
+  scaleTargetRef: {name: worker}
+  minReplicaCount: 0                            # scale to zero when the queue is empty
+  maxReplicaCount: 10
+  triggers:
+    - type: redis
+      metadata:
+        address: redis.default.svc.cluster.local:6379
+        listName: cases:queue
+        listLength: "5"                         # target ~5 queued cases per worker

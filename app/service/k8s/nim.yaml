@@ -1,0 +1,23 @@
+# A self-hosted LLM NIM: one whole GPU, a model cache, and a slow-start-aware readiness probe.
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: nim-llm}
+spec:
+  replicas: 1
+  strategy: {type: Recreate}                    # no spare GPU for a rolling update
+  selector: {matchLabels: {app: nim-llm}}
+  template:
+    metadata: {labels: {app: nim-llm}}
+    spec:
+      imagePullSecrets: [{name: ngc-registry}]
+      containers:
+        - name: nim
+          image: nvcr.io/nim/meta/llama-3.1-8b-instruct:2.0.13
+          env: [{name: NGC_API_KEY, valueFrom: {secretKeyRef: {name: ngc-api, key: NGC_API_KEY}}}]
+          ports: [{containerPort: 8000}]
+          resources: {limits: {nvidia.com/gpu: 1}}
+          volumeMounts: [{name: cache, mountPath: /opt/nim/.cache}]
+          startupProbe: {httpGet: {path: /v1/health/ready, port: 8000}, periodSeconds: 10, failureThreshold: 90}
+          readinessProbe: {httpGet: {path: /v1/health/ready, port: 8000}, periodSeconds: 10}
+          livenessProbe: {httpGet: {path: /v1/health/live, port: 8000}, periodSeconds: 20}
+      volumes: [{name: cache, emptyDir: {}}]     # a PVC in a real cluster (or NIMCache with the NIM Operator)

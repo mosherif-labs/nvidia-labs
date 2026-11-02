@@ -1,0 +1,20 @@
+services:
+  api:
+    build: {context: ../.., dockerfile: app/service/Dockerfile}
+    image: capstone-service:latest
+    ports: ["8000:8000"]
+    depends_on: [redis]
+  worker:
+    build: {context: ../.., dockerfile: app/service/Dockerfile}   # same image, built here too
+    image: capstone-service:latest
+    command: ["python", "worker.py"]
+    deploy: {replicas: 2}
+    environment:
+      NVIDIA_API_KEY: ${NVIDIA_API_KEY}                 # from your shell, never baked into the image
+      POSTGRES_URI: postgresql://postgres:postgres@postgres:5432/postgres
+    depends_on: [api, redis, postgres]
+  redis:
+    image: redis:7
+  postgres:
+    image: postgres:16
+    environment: {POSTGRES_PASSWORD: postgres}
